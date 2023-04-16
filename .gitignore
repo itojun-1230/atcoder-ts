@@ -1,0 +1,4 @@
+node_modules
+dist/src/script.js
+dist/src/script.js.map
+src/process/output.txt

@@ -1,0 +1,12 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node dist/src/script.js",
+    "copy": "node dist/src/process/copy.js && cd src/process && type output.txt | clip",
+    "reset": "node dist/src/process/reset.js"
+  },
+  "dependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
+  }
+}
