@@ -1,0 +1,5 @@
+const Main = (input: string[]) => {
+    
+}
+
+Main(require("fs").readFileSync("/dev/stdin", "utf8").trim().split("\n"));

@@ -2,7 +2,7 @@
   "license": "MIT",
   "scripts": {
     "start": "tsc && node dist/script.js",
-    "copy": "node dist/process/copy.js && cd src/process && type output.txt | clip",
+    "build": "node dist/process/copy.js && cd src && type output.txt | clip",
     "reset": "node dist/process/reset.js"
   },
   "dependencies": {

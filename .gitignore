@@ -1,5 +1,6 @@
 node_modules
 dist/script.js
+dist/outputt.js
 *.js.map
 tsconfig.tsbuildinfo 
 src/process/output.txt
