@@ -1,16 +1,16 @@
-const isPrime = (num: number): boolean => { //素数判定
-  for(let i = 2; i * i < num; i++ ) {
+const isPrime = (num: number): boolean => {
+  for(let i = 2; i * i <= num; i++ ) {
     if(num % i == 0) return false;
   }
   return true;
 }
-const DeepCopy = (e: any): any => {  //ディープコピー
+const DeepCopy = (e: any): any => {
   return JSON.parse(JSON.stringify( e ));
 }
-const SplitNumber = (e: string): number[] => {  //文字列を分割して数値配列に
+const SplitNumber = (e: string): number[] => {
   return e.split(" ").map(Number);
 }
-const SplitString = (e: string): string[] => {  //文字列を分割して文字配列に
+const SplitString = (e: string): string[] => {
   return e.trim().split(" ");
 }
 
