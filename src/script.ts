@@ -19,6 +19,9 @@ const Gcd = (a: number, b: number): number => {
     }
     return b;
 }
+const Icm = (a: number, b: number): number => {
+  return a / Gcd(a, b) * b;
+}
 const SplitNumber = (e: string): number[] => {
   return e.split(" ").map(Number)
 }
