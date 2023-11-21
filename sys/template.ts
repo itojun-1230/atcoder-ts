@@ -1,3 +1,4 @@
+
 const SpN = (e: string): number[] => e.split(" ").map(Number);  //SplitNumber
 const Deep = <T>(e: T): T => structuredClone(e);  //DeepCopy
 const UnArr = (n: number): undefined[] => [...new Array(n)];  //unfefined Array
