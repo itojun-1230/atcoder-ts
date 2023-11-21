@@ -33,6 +33,7 @@ const e_dis = (str1: string, str2: string): number => { //levenshtein
 }
 
 const Main = (input: string[]) => {
+  
 }
 
 Main(require("fs").readFileSync("./src/input.txt", "utf8").trim().split("\n").map((e: string) => e.trim()));
