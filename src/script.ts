@@ -29,7 +29,6 @@ reader.on("close", () => {
   finish();
 });
 
-
 const next = (): string => input[input_current++].trim();
 const nextNum = (): number => Number(input[input_current++]);
 const nextBigInt = (): BigInt => BigInt(input[input_current++]);
