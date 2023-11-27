@@ -1,1 +1,2 @@
 # atcoder-ts
+AtCoderのTypeScriptのテンプレート
