@@ -1,7 +1,7 @@
 {
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/ts-node src/script.ts",
+    "start": "./start.bat",
     "build": "./node_modules/.bin/ts-node sys/copy.ts && cd sys && type output.txt | clip && del output.txt",
     "reset": "./node_modules/.bin/ts-node sys/reset.ts"
   },
