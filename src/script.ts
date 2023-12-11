@@ -41,7 +41,7 @@ const SpN = (e: string): number[] => e.split(" ").map(Number);
 const print = <T>(out: T) => outputLine.push(String(out));
 
 class heapq<T> {
-  _data: {
+  private _data: {
     p: number,
     d: T
   }[] = [];
