@@ -43,11 +43,11 @@ const print = <T>(out: T) => outputLine.push(String(out));
 class heapq<T> {
   private _node: {
     priority: number,
-    data: T
+    data: T | undefined
   }[] = [];
   private _size: number = 0;
 
-  enqueue = (priority: number, data: T) => {
+  enqueue = (priority: number, data: T | undefined = undefined) => {
     this._node.push({
       priority,
       data
@@ -74,7 +74,9 @@ class heapq<T> {
     let heap = this._node;
     if(this._size == 1) {
       const result = heap[0];
-      heap = [];
+      this._node = [];
+      this._size--;
+
       return result;
     }
     this._size--;
