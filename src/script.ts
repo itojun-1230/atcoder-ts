@@ -41,23 +41,23 @@ const SpN = (e: string): number[] => e.split(" ").map(Number);
 const print = <T>(out: T) => outputLine.push(String(out));
 
 class heapq<T> {
-  _data: {
-    p: number,
-    d: T
+  private _node: {
+    priority: number,
+    data: T
   }[] = [];
   private _size: number = 0;
 
   enqueue = (priority: number, data: T) => {
-    this._data.push({
-      p: priority,
-      d: data
+    this._node.push({
+      priority,
+      data
     });
     if (this._size > 0) {
       let parent = Math.floor((this._size - 1) / 2);
       let index = this._size;
       while (parent >= 0) {
-        if (this._data[parent].p < this._data[index].p) {
-          [this._data[parent], this._data[index]] = swap(this._data[parent], this._data[index]);
+        if (this._node[parent].priority < this._node[index].priority) {
+          [this._node[parent], this._node[index]] = swap(this._node[parent], this._node[index]);
           index = parent;
           parent = Math.floor((index - 1) / 2);
         } else {
@@ -71,9 +71,14 @@ class heapq<T> {
     if (this._size == 0) {
       return undefined;
     }
+    let heap = this._node;
+    if(this._size == 1) {
+      const result = heap[0];
+      heap = [];
+      return result;
+    }
     this._size--;
 
-    let heap = this._data;
     const result = heap[0];
     heap[0] = heap.pop()!;
 
@@ -81,15 +86,15 @@ class heapq<T> {
     let left = 1, right = 2;
     while (left < this._size) {
       if (right >= this._size) {
-        if (heap[index].p < heap[left].p) {
+        if (heap[index].priority < heap[left].priority) {
           [heap[index], heap[left]] = swap(heap[index], heap[left]);
         }
         break;
       }
-      if (heap[left].p < heap[right].p && heap[index].p < heap[right].p) {
+      if (heap[left].priority < heap[right].priority && heap[index].priority < heap[right].priority) {
         [heap[index], heap[right]] = swap(heap[index], heap[right]);
         index = right;
-      } else if (heap[index].p < heap[left].p) {
+      } else if (heap[index].priority < heap[left].priority) {
         [heap[index], heap[left]] = swap(heap[index], heap[left]);
         index = left;
       } else {
@@ -99,13 +104,16 @@ class heapq<T> {
       right = Math.floor(index * 2) + 2;
     }
 
-    return result.d;
+    return result;
   }
   top = () => {
-    return this._data[0];
+    return this._node[0];
   }
   size = () => {
     return this._size;
+  }
+  node = () => {
+    return this._node;
   }
 }
 
