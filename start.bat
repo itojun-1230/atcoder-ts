@@ -1,19 +1,12 @@
-@for %%i in (src/sample/1.txt) do @set SIZE=%%~zi
-@if not %SIZE% == 0 (
-  call ./node_modules/.bin/ts-node src/script.ts < src/sample/1.txt
+@if exist src/sample1.txt (
+  call ./node_modules/.bin/ts-node src/script.ts < src/sample1.txt
 )
-
-@for %%i in (src/sample/2.txt) do @set SIZE=%%~zi
-@if not %SIZE% == 0 (
-  call ./node_modules/.bin/ts-node src/script.ts < src/sample/2.txt
+@if exist src/sample2.txt (
+  call ./node_modules/.bin/ts-node src/script.ts < src/sample2.txt
 )
-
-@for %%i in (src/sample/3.txt) do @set SIZE=%%~zi
-@if not %SIZE% == 0 (
-  call ./node_modules/.bin/ts-node src/script.ts < src/sample/3.txt
+@if exist src/sample3.txt (
+  call ./node_modules/.bin/ts-node src/script.ts < src/sample3.txt
 )
-
-@for %%i in (src/sample/4.txt) do @set SIZE=%%~zi
-@if not %SIZE% == 0 (
-  call ./node_modules/.bin/ts-node src/script.ts < src/sample/4.txt
+@if exist src/sample4.txt (
+  call ./node_modules/.bin/ts-node src/script.ts < src/sample4.txt
 )
